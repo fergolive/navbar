@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página Web</title>
+    <style>
+
+
+    :root{
+
+        --bg-color: #E5E5E5;
+        --txt-color:#303030;
+        --pri-color: #A900E4;
+    }
+
+    ul{
+        list-style-type: none;
+    }
+
+    body{
+        padding: 0;
+        margin: 0;
+    }
+
+    .navbar ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+  }
+  
+  .navbar {
+    display: flex;
+    width: 100%;
+    height: 80px;
+    background-color: var(--bg-color);
+    color: var(--txt-color);
+  }
+  
+  .navbar-mobile {
+    display: none;
+    width: 100%;
+    height: 80px;
+    background-color: var(--bg-color);
+    color: var(--txt-color);
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
+  
+  .logo {
+    object-fit: cover;
+    border-radius: 30px;
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    opacity: 1;
+  }
+  
+  .close-btn {
+    display: none;
+  }
+
+  .icon-item{
+    display: none;
+  }
+  
+  
+  .item a {
+    cursor: pointer;
+    width: auto;
+    height: auto;
+    padding: 10px;
+    border: 5px;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    font-size: 16px;
+  }
+  
+  .item a:hover {
+    filter: brightness(1.2);
+  }
+  
+  .hidden {
+    display: block;
+  }
+  
+  .back-zone {
+    display: none;
+  }
+  
+
+  
+  #close-back-zone {
+    display: none;
+  }
+  
+  @media screen and (min-width:801px){
+    .icon-item-menu{
+        display: none;
+    }
+  }
+  @media screen and (max-width: 800px) {
+
+
+    .icon-item{
+        display: block;
+      }
+    .navbar {
+      left: -200px;
+      top: 80px;
+      position: fixed;
+      height: 100%;
+      width: 200px;
+      z-index: 2000;
+      transition: all 0.1s ease-in-out;
+      display: flex;
+      flex-direction: row;
+    }
+    .navbar ul {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-direction: column;
+      color: var(--txt-color);
+      padding: 10px;
+    }
+
+    .navbar-mobile {
+      position: fixed;
+      display: flex;
+      padding-left: 20px;
+      padding-right: 20px;
+      z-index: 2000;
+    }
+    .itemsWrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding-left: 20px;
+    }
+    .logo {
+      margin-left: 30px;
+    }
+    .logo-wrapper {
+      position: relative;
+    }
+    #logo-navbar {
+      display: none;
+    }
+    .logo-mobile img{
+        margin-right: 30px;
+    }
+    .menu-icon {
+      cursor: pointer;
+    }
+    .close-btn {
+      cursor: pointer;
+      top: 31px;
+      right: 10px;
+      display: block;
+      position: absolute;
+      color: var(--pri-color);
+    }
+  
+    .hidden {
+      display: none;
+    }
+  
+    .back-zone {
+      right: 0px;
+      top: 80px;
+      position: fixed;
+      display: flex;
+      width: 100%;
+      height: 100%;
+      background-color: var(--pri-color);
+      opacity: 0.5;
+      z-index: 1800;
+      transition: all 0.2s ease-in;
+      justify-content: center;
+      align-items: flex-start;
+    }
+  
+    #close-back-zone {
+      color: var(--bg-color);
+      display: block;
+    }
+  
+    .close-side-btn {
+      position: absolute;
+      right: 20px;
+      top: 14px;
+    }
+  
+    
+  
+  
+    
+  
+  }
+    </style>
+</head>
+<body>
+
+    <div class="navbar-mobile">
+    
+        <div id="burguer" onclick="switchSide()" class="menu-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M4 6l16 0"></path>
+                <path d="M4 12l16 0"></path>
+                <path d="M4 18l16 0"></path>
+             </svg>  
+        </div>
+    
+        <div class="logo-mobile">
+            <img id="logo-mobile" class="logo" src="./assets/logo.png"  alt="logo" >
+        </div>
+    
+    </div>
+    
+    <nav class="navbar " id="navbar">
+        <ul class="ul-nav">
+            <div>
+
+                <li class="logo-wrapper" id="logo-navbar">
+                    <img id="logo" class="logo" src="./assets/logo.png"  alt="logo" >
+                </li>
+            </div>
+         
+
+            
+            <li class="item" id="home">
+                <a>
+                    <div class="icon-item-menu">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon-item-menu icon icon-tabler icon-tabler-armchair-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M5 10v-4a3 3 0 0 1 3 -3h8a3 3 0 0 1 3 3v4"></path>
+                            <path d="M16 15v-2a3 3 0 1 1 3 3v3h-14v-3a3 3 0 1 1 3 -3v2"></path>
+                            <path d="M8 12h8"></path>
+                            <path d="M7 19v2"></path>
+                            <path d="M17 19v2"></path>
+                        </svg>
+                    </div>
+                    Home</a></li>
+    
+            <li class="item" id="store">
+                <a>
+                    <div class="icon-item-menu">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-appgallery" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"></path>
+                            <path d="M9 8a3 3 0 0 0 6 0"></path>
+                        </svg>
+                    </div>
+                    Tienda</a></li>
+
+            <li class="item" id="contact">
+            <a >
+                <div class="icon-item-menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail-forward" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M12 18h-7a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v7.5"></path>
+                        <path d="M3 6l9 6l9 -6"></path>
+                        <path d="M15 18h6"></path>
+                        <path d="M18 15l3 3l-3 3"></path>
+                    </svg>
+                </div>
+                Contacto</a>
+            </li>
+    
+        </ul>
+    </nav>
+    
+    <div class="hidden" id="back-zone" onclick="switchSide()"></div>
+
+
+
+    <script>
+        closedSide=true
+  
+        function switchSide(){
+            if(closedSide){
+                openSideNav()
+            } else 
+            if(!closedSide){
+                closeSideNav()
+            }
+            closedSide=!closedSide
+        }
+
+        function openSideNav(){
+            let sideNav=document.getElementById('navbar');
+            sideNav.style.left='0px'
+            var bodyElement = document.body;
+            bodyElement.classList.add("disable-scroll");
+            let backZone=document.getElementById('back-zone');
+            backZone.classList.remove('hidden')
+            backZone.classList.add('back-zone')
+        }
+ 
+        function closeSideNav(){
+            let sideNav=document.getElementById('navbar');
+            sideNav.style.left='-200px'
+            var bodyElement = document.body;
+            bodyElement.classList.remove("disable-scroll");
+            let backZone=document.getElementById('back-zone');
+            backZone.classList.remove('back-zone')
+            backZone.classList.add('hidden')   
+        }
+
+    </script>
+</body>
+</html>
