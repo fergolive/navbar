@@ -6,7 +6,14 @@
     <title>Mi Página Web</title>
     <style>
 
+    @import url('https://fonts.googleapis.com/css2?family=Chivo:wght@100;300;900&family=Gabarito&display=swap');
 
+
+    *{
+        font-family: 'Chivo', sans-serif;
+        font-family: 'Gabarito', cursive;
+    }
+    
     :root{
 
         --bg-color: #E5E5E5;
@@ -98,6 +105,28 @@
     display: none;
   }
   
+.page-container{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.section-1{
+        width: 100%;
+        height: 1000px;
+        background-color: #303030;
+}
+.section-2{
+        width: 100%;
+        height: 1000px;
+        background-color: #919191;
+}
+.section-3{
+        width: 100%;
+        height: 1000px;
+        background-color: #d0d0d0;
+}
+
   @media screen and (min-width:801px){
     .icon-item-menu{
         display: none;
@@ -197,7 +226,7 @@
       top: 14px;
     }
   
-    
+   
   
   
     
@@ -279,6 +308,23 @@
     
     <div class="hidden" id="back-zone" onclick="switchSide()"></div>
 
+
+    <div class="page-container">
+        
+    <div class="section-1" >
+        
+    </div>
+
+    
+    <div class="section-2" >
+        
+    </div>
+
+    
+    <div class="section-3" >
+        
+    </div>
+    </div>
 
 
     <script>
